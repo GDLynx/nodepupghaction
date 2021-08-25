@@ -1,0 +1,11 @@
+name: unusedbutexample
+on:
+  schedule:
+    - cron: "*/8 * * * *"
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: get
+      run: |
+        curl https://google.com
