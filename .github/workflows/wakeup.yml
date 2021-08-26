@@ -15,6 +15,4 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - run: git clone https://github.com/GDLynx/nodepupghaction.git
-      - run: cd nodepupghaction
-      - run: npm install
-      - run: npm start
+      - run: ls
