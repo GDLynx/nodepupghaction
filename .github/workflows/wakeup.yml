@@ -1,0 +1,20 @@
+name: wakeup
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [10.x, 12.x, 14.x, 15.x]
+    steps:
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: git clone https://github.com/GDLynx/nodepupghaction.git
+      - run: cd nodepupghaction
+      - run: npm install
+      - run: npm start
